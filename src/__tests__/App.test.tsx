@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { render, screen } from '@testing-library/react'
 import React from 'react'
+import Clock from 'react-clock'
 import App from '../App'
+import { mountWithConfig } from '../__mocks__/config'
 
 describe('check first div text', () => {
-  render(<App />)
-  const linkElement = screen.getByText('sssss')
-  expect(linkElement).toBeInTheDocument()
+  const wrapper = mountWithConfig(<App />)
+  expect(wrapper.find(Clock)).toHaveLength(1)
 })

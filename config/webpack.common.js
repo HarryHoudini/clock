@@ -1,11 +1,11 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
 
-const entry = path.resolve(process.cwd(), 'src', 'index.tsx');
+const entry = path.resolve(process.cwd(), 'src', 'index.tsx')
 
-const getRules = mode => {
+const getRules = (mode) => {
   const styleLoader =
-    mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader';
+    mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader'
 
   const postcssLoader = {
     loader: 'postcss-loader',
@@ -14,7 +14,7 @@ const getRules = mode => {
         plugins: ['autoprefixer'],
       },
     },
-  };
+  }
 
   return [
     {
@@ -45,18 +45,17 @@ const getRules = mode => {
       include: path.resolve(process.cwd(), 'src'),
       use: ['ts-loader'],
     },
-  ];
-};
+  ]
+}
 
-const getModule = mode => ({
+const getModule = (mode) => ({
   strictExportPresence: true,
   rules: getRules(mode),
-});
+})
 
 const resolve = {
   extensions: ['.ts', '.tsx', '.js', '.json', '.jsx'],
   alias: { '@': path.resolve('src') },
-};
+}
 
-
-module.exports = { entry, getModule, resolve };
+module.exports = { entry, getModule, resolve }

@@ -1,8 +1,6 @@
-
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { entry, getModule, resolve } = require('./webpack.common');
-
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { entry, getModule, resolve } = require('./webpack.common')
 
 module.exports = {
   mode: 'development',
@@ -12,7 +10,7 @@ module.exports = {
   target: 'web',
   watchOptions: {
     poll: 5000,
-    ignored: ["node_modules"]
+    ignored: ['node_modules'],
   },
 
   devServer: {
@@ -34,4 +32,4 @@ module.exports = {
       template: path.resolve(process.cwd(), 'public', 'index.html'),
     }),
   ],
-};
+}

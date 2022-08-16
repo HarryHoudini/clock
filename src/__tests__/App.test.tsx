@@ -1,10 +1,11 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React from 'react'
-import Clock from 'react-clock'
 import App from '../App'
+import { Clock } from '../components/Clock/Clock'
 import { mountWithConfig } from '../__mocks__/config'
 
-describe('check first div text', () => {
-  const wrapper = mountWithConfig(<App />)
-  expect(wrapper.find(Clock)).toHaveLength(1)
+describe(App.name, () => {
+  it('should contain Clock component', () => {
+    const wrapper = mountWithConfig(<App />)
+    expect(wrapper.find(Clock)).toHaveLength(1)
+  })
 })

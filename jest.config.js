@@ -8,4 +8,6 @@ module.exports = {
     '\\.(css|less)$': '<rootDir>/src/__mocks__/styleMock.ts',
   },
   setupFiles: ['<rootDir>/config/tests/setupTests.ts'],
+  testEnvironment: 'jsdom',
+  preset: 'ts-jest',
 }

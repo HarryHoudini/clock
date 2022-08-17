@@ -15,7 +15,6 @@ module.exports = {
   target: 'web',
 
   output: {
-    publicPath: '/',
     path: path.resolve(process.cwd(), 'dist'),
     filename: 'js/[name].[fullhash].js',
   },

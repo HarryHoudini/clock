@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
+const paths = require('./paths')
 const { entry, getModule, resolve } = require('./webpack.common')
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: `${paths.src}/assets/favicon.png`,
       template: path.resolve(process.cwd(), 'dist', 'index.html'),
     }),
 
